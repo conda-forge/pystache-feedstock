@@ -5,7 +5,7 @@ Home: http://github.com/defunkt/pystache
 
 Package license: MIT License
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Mustache for Python
 
