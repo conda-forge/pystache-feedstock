@@ -17,8 +17,8 @@ build:
     script: python setup.py install --single-version-externally-managed --record record.txt
     noarch: python
     entry_points:
-        - pystache=pystache.commands.render:main
-        - pystache-test=pystache.commands.test:main
+        - pystache = pystache.commands.render:main
+        - pystache-test = pystache.commands.test:main
 
 requirements:
     build:
