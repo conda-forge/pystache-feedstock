@@ -42,7 +42,8 @@ test:
 
 about:
     home: http://github.com/defunkt/pystache
-    license: MIT License
+    license: MIT
+    license_file: LICENSE
     summary: 'Mustache for Python'
 
 extra:
