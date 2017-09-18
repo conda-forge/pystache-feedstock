@@ -23,8 +23,8 @@ before_install:
 
 install:
     - |
-      MINICONDA_URL="http://repo.continuum.io/miniconda"
-      MINICONDA_FILE="Miniconda3-latest-MacOSX-x86_64.sh"
+      export MINICONDA_URL="http://repo.continuum.io/miniconda"
+      export MINICONDA_FILE="Miniconda3-latest-MacOSX-x86_64.sh"
       curl -O "${MINICONDA_URL}/${MINICONDA_FILE}"
       bash $MINICONDA_FILE -b
 
