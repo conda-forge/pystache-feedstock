@@ -20,9 +20,9 @@ build:
         - pystache-test = pystache.commands.test:main
 
 requirements:
-    build:
+    host:
         - python >=3.6
-        - setuptools
+        - pip
 
     run:
         - python >=3.6
