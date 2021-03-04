@@ -1,7 +1,7 @@
 {% set name = "pystache" %}
-{% set version = "0.5.6" %}
+{% set version = "0.6.0" %}
 {% set build = 0 %}
-{% set sha256 = "4c447356dbc36d632a39caeaac7baa9c47ba8ca3cd2928eb5f0fd0ceff3ef87f" %}
+{% set sha256 = "1d7fe339e51ce8cc76489de17df72c951c3fd81907c5a64fbd46aac35a9dad5d" %}
 
 package:
     name: {{ name }}
