@@ -1,32 +1,31 @@
 {% set name = "pystache" %}
-{% set version = "0.5.4" %}
-{% set build = 1 %}
-{% set md5 = "485885e67a0f6411d5252e69b20a35ca" %}
+{% set version = "0.6.0" %}
+{% set build = 0 %}
+{% set sha256 = "1d7fe339e51ce8cc76489de17df72c951c3fd81907c5a64fbd46aac35a9dad5d" %}
 
 package:
     name: {{ name }}
     version: {{ version }}
 
 source:
-    fn: {{ name }}-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    md5: {{ md5 }}
+    url: https://github.com/sarnold/pystache/archive/{{ version }}.tar.gz
+    sha256: {{ sha256 }}
 
 build:
     number: {{ build }}
-    script: python setup.py install --single-version-externally-managed --record record.txt
+    script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
     noarch: python
     entry_points:
         - pystache = pystache.commands.render:main
         - pystache-test = pystache.commands.test:main
 
 requirements:
-    build:
-        - python
-        - setuptools
+    host:
+        - python >=3.6
+        - pip
 
     run:
-        - python
+        - python >=3.6
 
 test:
     imports:
@@ -42,11 +41,14 @@ test:
         - pystache-test
 
 about:
-    home: http://github.com/defunkt/pystache
+    home: http://github.com/sarnold/pystache
     license: MIT
     license_file: LICENSE
     summary: 'Mustache for Python'
+    doc_url: "https://github.com/sarnold/pystache/blob/master/README.md"
+    dev_url: "https://github.com/sarnold/pystache"
 
 extra:
     recipe-maintainers:
         - kwilcox
+        - sarnold
