@@ -1,5 +1,5 @@
 {% set name = "pystache" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pystache-{{ version }}.tar.gz
-  sha256: 93bf92b2149a4c4b58d12142e2c4c6dd5c08d89e4c95afccd4b6efe2ee1d470d
+  sha256: e02902233049b16e0be1a94f0c7389e805625f6735783f4533b020b5a38a27c7
 
 build:
   entry_points:
