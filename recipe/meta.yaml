@@ -15,7 +15,7 @@ build:
     - pystache-test=pystache.commands.test:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -31,6 +31,7 @@ test:
     - pystache
   commands:
     - pip check
+    - pip show pystache
     - pystache --help
     - pystache-test --help
   requires:
