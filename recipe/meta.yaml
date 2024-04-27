@@ -34,7 +34,7 @@ test:
   commands:
     - pip check
     - pip show pystache
-    - "pip show {{ name }} | grep -Fx 'Version: {{ version }}' || true"
+    - "pip show {{ name }} | grep -Fx 'Version: 0.6.4' || true"
     - pystache --help
     - pystache-test --help
   requires:
