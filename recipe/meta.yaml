@@ -14,33 +14,39 @@ build:
     - pystache=pystache.commands.render:main
     - pystache-test=pystache.commands.test:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
-    - setuptools >=40.8.0
-    - wheel
+    - python >=3.8
+    - setuptools >=61
+    - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.6
+    - python >=3.8
+    # only required for py<310 but want to stay noarch: python
+    - importlib-metadata >=4.6
 
 test:
   imports:
     - pystache
   commands:
     - pip check
+    - pip show pystache
+    - "pip show {{ name }} | grep -Fx 'Version: {{ version }}'"
     - pystache --help
     - pystache-test --help
   requires:
     - pip
 
 about:
-  home: https://github.com/sarnold/pystache
+  home: https://github.com/PennyDreadfulMTG/pystache
   summary: Mustache for Python
   license: MIT
   license_file: LICENSE
+  dev_url: https://github.com/PennyDreadfulMTG/pystache
+  doc_url: https://github.com/PennyDreadfulMTG/pystache/blob/master/README.rst
 
 extra:
   recipe-maintainers:
