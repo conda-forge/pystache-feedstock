@@ -1,13 +1,13 @@
 {% set name = "pystache" %}
-{% set version = "0.6.5" %}
+{% set version = "0.6.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pystache-{{ version }}.tar.gz
-  sha256: 9f238d5a06f18843e0d491d8e4e292dc03fed6a54cb0a5c34be37a3faa973174
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pystache-{{ version }}.tar.gz
+  sha256: 810556d6588e6717abe2c10b8e8a907b7889cf11e06fa0589136ab7fed5c7adb
 
 build:
   entry_points:
@@ -15,7 +15,7 @@ build:
     - pystache-test=pystache.commands.test:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
